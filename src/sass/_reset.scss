@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+@use 'variables.scss';
 html,
 body,
 div,
@@ -107,7 +107,8 @@ section {
 }
 body {
 	line-height: 1;
-	font-size: 16px - 26px;
+	font-size: 16px;
+	background-color: $light-grey;
 }
 ol,
 ul {

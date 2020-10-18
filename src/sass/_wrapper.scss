@@ -1,0 +1,19 @@
+// Styles for the body
+@use 'variables.scss';
+
+.main {
+	width: 100%;
+	// background-color: orange;
+	height: 100px;
+
+	@media (min-width: $layout-breakpoint-md) {
+		background-color: red;
+		width: $layout-breakpoint-md;
+		margin: 0 auto;
+	}
+	@media (min-width: $layout-breakpoint-lg) {
+		background-color: green;
+		width: $layout-breakpoint-lg;
+		margin: 0 auto;
+	}
+}

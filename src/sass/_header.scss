@@ -3,13 +3,117 @@
 	height: 136px;
 	width: 100%;
 	background-image: url("../../src/assets/mobile/bg-pattern-header.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left;
 	left: 100%;
 	right: -100%;
 	top: 0%;
 	bottom: 0%;
-	background: #5964e0;
-	border-radius: 0px 0px 100px 0px;
-	transform: matrix(-1, 0, 0, 1, 0, 0);
+
 	@media (min-width: $layout-breakpoint-md) {
 	}
+}
+
+#logo-theme-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+// Logo Styles
+#id_logo {
+	background-image: url("./../../src/assets/desktop/logo.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 42px;
+	width: 115px;
+	margin-left: 24px;
+}
+
+// Theme Container Styles
+.theme-container {
+	height: 24px;
+	display: flex;
+	width: 160px;
+	justify-content: space-evenly;
+}
+
+#darkMode {
+	background-image: url("./../../src/assets/desktop/icon-moon.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 30px;
+	width: 34px;
+}
+#lightMode {
+	background-image: url("./../../src/assets/desktop/icon-sun.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	height: 30px;
+	width: 34px;
+}
+
+// Toggle buttons tyles$white;
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: $white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: $violet;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:checked + .slider {
+	background-color: $white;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px $white;
+	outline: none;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
 }

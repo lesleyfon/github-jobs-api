@@ -21,6 +21,10 @@ module.exports = {
 						loader: "css-loader",
 					},
 					{
+						loader: "resolve-url-loader",
+						// options: {...}
+					},
+					{
 						// Loads a SASS/SCSS file and compiles it to CSS
 						loader: "sass-loader",
 						options: {

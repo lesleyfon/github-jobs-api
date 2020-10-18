@@ -1,0 +1,15 @@
+@use 'variables.scss';
+#id_header {
+	height: 136px;
+	width: 100%;
+	background-image: url("../../src/assets/mobile/bg-pattern-header.svg");
+	left: 100%;
+	right: -100%;
+	top: 0%;
+	bottom: 0%;
+	background: #5964e0;
+	border-radius: 0px 0px 100px 0px;
+	transform: matrix(-1, 0, 0, 1, 0, 0);
+	@media (min-width: $layout-breakpoint-md) {
+	}
+}

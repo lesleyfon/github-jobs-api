@@ -25,7 +25,7 @@ class Header {
 					<span class="slider round"></span>
 				</label>
 				<div id="darkMode"></div>
-		</div>`;
+			</div>`;
 
 		return themeContainer;
 	}

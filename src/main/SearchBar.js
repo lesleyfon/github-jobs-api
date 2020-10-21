@@ -3,19 +3,21 @@ class SearchBar {
 		this.hello = "this.hello";
 	}
 
-	searchField() {
+	searchInputField() {
 		const searchField = document.createElement("input");
 		searchField.setAttribute("id", "search-text-field");
-		searchField.placeholder = "filter by title";
+		searchField.type = "text";
+		searchField.placeholder = "Filter by title...";
 
 		return searchField;
 	}
 	filter() {
-		const filter = document.createElement("input");
-		filter.setAttribute("id", "filter-field");
-		filter.placeholder = "filter by E.X location";
+		const filterInputField = document.createElement("input");
+		filterInputField.setAttribute("id", "filter-field");
+		filterInputField.type = "text";
+		filterInputField.placeholder = "filter by E.X location";
 
-		return filter;
+		return filterInputField;
 	}
 
 	submitButton() {
@@ -26,8 +28,9 @@ class SearchBar {
 	}
 	createForm() {
 		const form = document.createElement("form");
+
 		form.setAttribute("id", "form_id");
-		form.appendChild(this.searchField());
+		form.appendChild(this.searchInputField());
 		form.appendChild(this.filter());
 		form.appendChild(this.submitButton());
 

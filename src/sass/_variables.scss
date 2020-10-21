@@ -31,3 +31,23 @@ $h4-font-size-lg: 18px;
 // Breakpoint
 $layout-breakpoint-md: 768px;
 $layout-breakpoint-lg: 1110px;
+
+// https://google-webfonts-helper.herokuapp.com/fonts/abel?subsets=latin
+// CSS
+@font-face {
+	font-family: "Abel";
+	font-style: normal;
+	font-weight: 400;
+	src: url("../../src/assets/fonts/abel/abel-v12-latin-regular.eot"); /* IE9 Compat Modes */
+	src: local("Abel Regular"), local("Abel-Regular"),
+		url("../../src/assets/fonts/abel/abel-v12-latin-regular.eot?#iefix")
+			format("embedded-opentype"),
+		/* IE6-IE8 */ url("../../src/assets/fonts/abel/abel-v12-latin-regular.woff2")
+			format("woff2"),
+		/* Super Modern Browsers */ url("../../src/assets/fonts/abel/abel-v12-latin-regular.woff")
+			format("woff"),
+		/* Modern Browsers */ url("../../src/assets/fonts/abel/abel-v12-latin-regular.ttf")
+			format("truetype"),
+		/* Safari, Android, iOS */
+			url("../../src/assets/fonts/abel/abel-v12-latin-regular.svg#Abel") format("svg"); /* Legacy iOS */
+}

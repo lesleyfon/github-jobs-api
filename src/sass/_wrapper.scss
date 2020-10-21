@@ -3,8 +3,7 @@
 
 .main {
 	width: 90%;
-	background-color: orange;
-	height: 100px;
+	height: 100vh;
 	margin: -37px auto 0px auto;
 	@media (min-width: $layout-breakpoint-md) {
 		background-color: red;
@@ -15,28 +14,5 @@
 		background-color: green;
 		width: $layout-breakpoint-lg;
 		margin: -40px auto;
-	}
-}
-
-.search-bar-section {
-	width: 100%;
-	background-color: $white;
-	height: 80px;
-}
-.search-bar-section form {
-	width: 90%;
-	margin: 0 auto;
-	position: absolute;
-
-	font-family: Abel;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 16px;
-	line-height: 20px;
-	@media (min-width: $layout-breakpoint-md) {
-		width: $layout-breakpoint-md;
-	}
-	@media (min-width: $layout-breakpoint-lg) {
-		width: $layout-breakpoint-lg;
 	}
 }

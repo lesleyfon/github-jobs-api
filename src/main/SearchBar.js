@@ -4,48 +4,53 @@ class SearchBar {
 	}
 
 	searchInputField() {
-		const searchField = document.createElement("input");
-		searchField.setAttribute("id", "search-text-field");
-		searchField.type = "text";
-		searchField.placeholder = "Filter by title...";
-
-		return searchField;
+		return `
+		<label id="search-input-field-label">
+			<span id="search-input-field-svg"></span>
+			<input id="search-text-field" type="text" placeholder="Filter by title...">
+		</label>
+	`;
 	}
 	filter() {
-		const filterInputField = document.createElement("input");
-		filterInputField.setAttribute("id", "filter-field");
-		filterInputField.type = "text";
-		filterInputField.placeholder = "filter by E.X location";
-
-		return filterInputField;
+		return `
+			<label id = "filter-location-field-label">
+				<span id="filter-location-svg-span"></span>
+				<input id="filter-input-field" type="text" placeholder="Filter by location...">
+			</label>
+	`;
 	}
 
 	submitButton() {
-		const submitButton = document.createElement("input");
-		submitButton.setAttribute("id", "submit-field");
-		submitButton.type = "submit";
+		const submitButton = `
+			<label id ="submit-button-label">
+				<span id="submit-svg"></span>
+				<input id="submit-field" type="submit" placeholder="Search">
+			</label>
+		`;
 		return submitButton;
 	}
 	createForm() {
 		const form = document.createElement("form");
 
 		form.setAttribute("id", "form_id");
-		form.appendChild(this.searchInputField());
-		form.appendChild(this.filter());
-		form.appendChild(this.submitButton());
 
 		form.addEventListener("submit", (event) => {
 			event.preventDefault();
 			console.log("hello");
 		});
-		return form;
+		return `<form>
+			${this.searchInputField()}
+			${this.filter()}
+			${this.submitButton()}
+		</form>`;
 	}
 
 	renderSearchBar() {
 		const section = document.createElement("section");
 		section.className = "search-bar-section";
 
-		section.appendChild(this.createForm());
+		section.innerHTML = this.createForm();
+		// section.appendChild(this.createForm());
 
 		return section;
 	}

@@ -2,35 +2,30 @@ class Header {
 	constructor() {}
 
 	addLogo() {
-		const logoDiv = document.createElement("div");
-		logoDiv.setAttribute("id", "id_logo");
-		return logoDiv;
+		return `<div id="id_logo"></div>`;
 	}
 	buildHeader() {
 		const header = document.getElementById("id_header");
 
-		const logoThemeContainer = document.createElement("div");
-		logoThemeContainer.setAttribute("id", "logo-theme-container");
+		const logoThemeContainer = `
+		<div id="logo-theme-container">
+			${this.addLogo()}
+			${this.themeContainer()}
+		</div>`;
 
-		logoThemeContainer.appendChild(this.addLogo());
-		logoThemeContainer.appendChild(this.themeContainer());
-
-		header.appendChild(logoThemeContainer);
+		header.innerHTML = logoThemeContainer;
 	}
 
 	themeContainer() {
-		const themeContainer = document.createElement("div");
-		themeContainer.className = "theme-container";
-		const themeLabel = `
+		const themeContainer = `
+			<div class = "theme-container"> 
 				<div id="lightMode"></div>
 				<label class="switch">
 					<input type="checkbox" checked>
 					<span class="slider round"></span>
 				</label>
 				<div id="darkMode"></div>
-		`;
-
-		themeContainer.innerHTML = themeLabel;
+		</div>`;
 
 		return themeContainer;
 	}

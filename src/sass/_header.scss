@@ -1,15 +1,17 @@
 @use 'variables.scss';
 #id_header {
-	height: 136px;
+	min-height: 136px;
+	max-height: max-content;
 	width: 100%;
 	background-image: url("../../src/assets/mobile/bg-pattern-header.svg");
 	background-repeat: no-repeat;
 	background-size: cover;
-
 	left: 100%;
 	right: -100%;
 	top: 0%;
 	bottom: 0%;
+	display: flex;
+	align-items: center;
 }
 
 #logo-theme-container {
@@ -33,15 +35,23 @@
 	background-image: url("./../../src/assets/desktop/logo.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
-	height: 42px;
-	width: 115px;
+	height: 32px;
+	max-width: 100%;
+	min-width: 100px;
 	margin-left: 24px;
+	@media (min-width: $layout-breakpoint-md) {
+		margin: 0;
+	}
+	@media (min-width: $layout-breakpoint-lg) {
+		margin: 0;
+	}
 }
 
-// Theme Container Styles
+// Switch Theme Container Styles
 .theme-container {
-	height: 24px;
+	height: 100%;
 	display: flex;
+	align-items: center;
 	width: 160px;
 	justify-content: space-evenly;
 }
@@ -50,23 +60,23 @@
 	background-image: url("./../../src/assets/desktop/icon-moon.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
-	height: 30px;
-	width: 34px;
+	height: 25px;
+	width: 25px;
 }
 #lightMode {
 	background-image: url("./../../src/assets/desktop/icon-sun.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
-	height: 30px;
-	width: 34px;
+	height: 25px;
+	width: 25px;
 }
 
-// Toggle buttons tyles$white;
+// Toggle buttons styles ;
 .switch {
 	position: relative;
 	display: inline-block;
 	width: 60px;
-	height: 34px;
+	height: 30px;
 }
 
 .switch input {
@@ -90,10 +100,10 @@
 .slider:before {
 	position: absolute;
 	content: "";
-	height: 26px;
-	width: 26px;
+	height: 20px;
+	width: 20px;
 	left: 4px;
-	bottom: 4px;
+	bottom: 5px;
 	background-color: $violet;
 	-webkit-transition: 0.4s;
 	transition: 0.4s;

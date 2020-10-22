@@ -6,12 +6,10 @@
 	height: 100vh;
 	margin: -37px auto 0px auto;
 	@media (min-width: $layout-breakpoint-md) {
-		background-color: red;
 		width: $layout-breakpoint-md;
 		margin: -40px auto;
 	}
 	@media (min-width: $layout-breakpoint-lg) {
-		background-color: green;
 		width: $layout-breakpoint-lg;
 		margin: -40px auto;
 	}

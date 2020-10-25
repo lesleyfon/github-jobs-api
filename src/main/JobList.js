@@ -42,14 +42,14 @@ class JobList {
                 background-image: url(${logo ? logo : this.imagePlaceHolder});
                 '>
                 </div>
-                <p> 
-                    <span> ${this.formatDate(jobListing.created_at)} </span> 
+                <p class='created-at'> 
+                    <span> ${this.formatDate(jobListing.created_at)} ago</span> 
                     • 
-                    <span>${jobListing.type}</span>    
+                    <span class='job-type'>${jobListing.type}</span>    
                 </p>
-                <h3>${jobListing.title}</h3>
-                <p>${jobListing.company}</p>
-                <p> ${jobListing.location}</p>
+                <h3 class='job-title'>${jobListing.title}</h3>
+                <p class='company'  >${jobListing.company}</p>
+                <p class="location"> ${jobListing.location}</p>
         </div>`;
 		});
 

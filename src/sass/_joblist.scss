@@ -27,9 +27,11 @@
 }
 
 .job-list-card-wrapper .job-card {
-	height: 253px;
+	max-height: 253px;
+	height: 100%;
 	background: $white;
 	padding-left: 25px;
+	border-radius: 6px;
 	@media (min-width: $layout-breakpoint-md) {
 		padding-left: 35px;
 	}
@@ -45,10 +47,50 @@
 	margin-top: -25px;
 	padding: 3px;
 	background-color: inherit;
+	border: 0.1px #f4f6f8 solid;
 	@media (min-width: $layout-breakpoint-md) {
 		width: 75px;
 		height: 75px;
 	}
 	@media (min-width: $layout-breakpoint-lg) {
 	}
+}
+.job-list-card-wrapper .job-card .created-at,
+.company {
+	height: 20px;
+	font-family: Abel;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 0.9rem;
+	line-height: 20px;
+	margin: 13px 0px;
+	color: #6e8098;
+
+	span {
+		margin-right: 10px;
+	}
+	.job-type {
+		margin-left: 5px;
+	}
+}
+
+.job-list-card-wrapper .job-card .job-title {
+	font-family: Abel;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.35rem;
+	word-break: initial;
+	line-height: 25px;
+	color: #19202d;
+	margin: 13px 0px;
+}
+.job-list-card-wrapper .job-card .location {
+	font-family: Abel;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 0.8rem;
+	line-height: 18px;
+	/* identical to box height */
+	margin: 20px 0px;
+	color: #5964e0;
 }

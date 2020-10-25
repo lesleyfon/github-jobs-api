@@ -15,7 +15,7 @@
 	padding: 0px;
 	display: grid;
 	grid-template-columns: 1fr;
-	row-gap: 15px;
+	row-gap: 40px;
 
 	justify-content: space-between;
 	@media (min-width: $layout-breakpoint-md) {
@@ -29,4 +29,26 @@
 .job-list-card-wrapper .job-card {
 	height: 253px;
 	background: $white;
+	padding-left: 25px;
+	@media (min-width: $layout-breakpoint-md) {
+		padding-left: 35px;
+	}
+}
+
+.job-list-card-wrapper .job-card .job-logo {
+	width: 50px;
+	height: 50px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	border-radius: 15px;
+	margin-top: -25px;
+	padding: 3px;
+	background-color: inherit;
+	@media (min-width: $layout-breakpoint-md) {
+		width: 75px;
+		height: 75px;
+	}
+	@media (min-width: $layout-breakpoint-lg) {
+	}
 }

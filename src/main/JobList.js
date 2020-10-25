@@ -3,6 +3,8 @@ const { data } = require("./../main/data.js");
 class JobList {
 	constructor() {
 		this.jobListings = [...data];
+		this.imagePlaceHolder =
+			"https://images.unsplash.com/photo-1515622472995-1a06094d2224?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80";
 	}
 
 	formatDate(dateString) {
@@ -34,20 +36,20 @@ class JobList {
 
 		this.jobListings.forEach((jobListing) => {
 			let logo = jobListing.company_logo;
-			// <img src='${logo ? logo : "#"}' alt="company Logo">
 			listingInnerHTML += `
-                <div class='job-card'>
-                    <div class='job-logo'>
-                        
-
-                    </div>
-                    <p> 
-                        <span> ${this.formatDate(jobListing.created_at)} </span> 
-                        • 
-                        <span>${jobListing.type}</span></p>
-                    <h3>${jobListing.title}</h3>
-                    <p>${jobListing.company}</p>
-                    <p> ${jobListing.location}</p>
+            <div class='job-card'>
+                <div class='job-logo' style= '
+                background-image: url(${logo ? logo : this.imagePlaceHolder});
+                '>
+                </div>
+                <p> 
+                    <span> ${this.formatDate(jobListing.created_at)} </span> 
+                    • 
+                    <span>${jobListing.type}</span>    
+                </p>
+                <h3>${jobListing.title}</h3>
+                <p>${jobListing.company}</p>
+                <p> ${jobListing.location}</p>
         </div>`;
 		});
 

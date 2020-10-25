@@ -5,6 +5,7 @@ const Main = require("./main/Main.js");
 (function () {
 	const header = new Header();
 	header.buildHeader();
+
 	const main = new Main();
 	main.renderMain();
 })();

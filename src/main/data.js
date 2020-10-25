@@ -18,7 +18,7 @@ export const data = [
 		id: "fd980fb9-b166-4abf-8d3c-5a046c813ff5",
 		type: "Full Time",
 		url: "https://jobs.github.com/positions/fd980fb9-b166-4abf-8d3c-5a046c813ff5",
-		created_at: "Fri Oct 16 15:17:48 UTC 2020",
+		created_at: "Fri Oct 1 15:17:48 UTC 2020",
 		company: "Journalism For Change",
 		company_url: "https://www.journalismforchange.org/website-developerprogrammer",
 		location: "UK or USA",

@@ -34,10 +34,12 @@ class JobList {
 
 		this.jobListings.forEach((jobListing) => {
 			let logo = jobListing.company_logo;
+			// <img src='${logo ? logo : "#"}' alt="company Logo">
 			listingInnerHTML += `
                 <div class='job-card'>
                     <div class='job-logo'>
-                        <img src='${logo ? logo : "#"}' alt="company Logo">
+                        
+
                     </div>
                     <p> 
                         <span> ${this.formatDate(jobListing.created_at)} </span> 

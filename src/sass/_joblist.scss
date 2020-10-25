@@ -1,0 +1,32 @@
+@use "variable.scss";
+
+.container {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	@media (min-width: $layout-breakpoint-md) {
+		height: 100%;
+	}
+}
+
+.job-list-card-wrapper {
+	width: 100%;
+	margin: 3rem 0px;
+	padding: 0px;
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 15px;
+
+	justify-content: space-between;
+	@media (min-width: $layout-breakpoint-md) {
+		grid-template-columns: 49% 49%;
+	}
+	@media (min-width: $layout-breakpoint-lg) {
+		grid-template-columns: 32.5% 32.5% 32.5%;
+	}
+}
+
+.job-list-card-wrapper .job-card {
+	height: 253px;
+	background: $white;
+}

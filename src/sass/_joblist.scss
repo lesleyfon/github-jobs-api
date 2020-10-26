@@ -65,7 +65,7 @@
 	line-height: 20px;
 	margin: 13px 0px;
 	color: #6e8098;
-
+	text-decoration: none;
 	span {
 		margin-right: 10px;
 	}
@@ -93,4 +93,17 @@
 	/* identical to box height */
 	margin: 20px 0px;
 	color: #5964e0;
+	span {
+		background-image: url("../../src/assets/desktop/icon-location.svg");
+		background-repeat: no-repeat;
+		background-size: contain;
+		height: 0.7rem;
+		width: 0.7rem;
+		display: inline-block;
+		overflow: hidden;
+		background-repeat: no-repeat;
+		background-size: 0.4rem;
+		background-position: center;
+		border: none;
+	}
 }

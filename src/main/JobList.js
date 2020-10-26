@@ -37,19 +37,23 @@ class JobList {
 		this.jobListings.forEach((jobListing) => {
 			let logo = jobListing.company_logo;
 			listingInnerHTML += `
-            <div class='job-card'>
+			<div class='job-card'>
+				
                 <div class='job-logo' style= '
                 background-image: url(${logo ? logo : this.imagePlaceHolder});
                 '>
-                </div>
+				</div>
+				
                 <p class='created-at'> 
                     <span> ${this.formatDate(jobListing.created_at)} ago</span> 
                     • 
                     <span class='job-type'>${jobListing.type}</span>    
                 </p>
                 <h3 class='job-title'>${jobListing.title}</h3>
-                <p class='company'  >${jobListing.company}</p>
-                <p class="location"> ${jobListing.location}</p>
+				<a class='company' href="${jobListing.company_url}" target='_blank' rel="noopener">
+					<p >${jobListing.company}</p>
+				</a>
+				<p class="location"><span></span>${jobListing.location}</p>
         </div>`;
 		});
 

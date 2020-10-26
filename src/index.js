@@ -9,7 +9,3 @@ const Main = require("./main/Main.js");
 	const main = new Main();
 	main.renderMain();
 })();
-
-// if (process.env.NODE_ENV === "development") {
-// 	main();
-// }

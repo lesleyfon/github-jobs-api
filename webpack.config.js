@@ -1,6 +1,8 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
+
 const webpack = require("webpack");
 
 module.exports = {
@@ -17,8 +19,12 @@ module.exports = {
 		// new CleanWebpackPlugin(),
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 		new HtmlWebpackPlugin({
-			title: "Development",
+			title: "GitHub Jobs",
+			meta: {
+				viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
+			},
 		}),
+		new HtmlWebpackTagsPlugin({ tags: ["sass/main.css"], append: true }),
 	],
 
 	module: {

@@ -20,6 +20,7 @@ module.exports = {
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 		new HtmlWebpackPlugin({
 			title: "GitHub Jobs",
+			template: "./src/template/index.html",
 			meta: {
 				viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
 			},

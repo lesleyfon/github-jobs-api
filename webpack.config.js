@@ -5,9 +5,12 @@ const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
 
 module.exports = {
 	mode: "development",
-	entry: "./src/index.js",
+	entry: {
+		main: "./src/index.js",
+		description: "./src/description.js",
+	},
 	output: {
-		filename: "bundle.js",
+		filename: "[name].bundle.js",
 		path: path.resolve(__dirname, "dist"),
 	},
 	// Helps makes it easier to track down errors when code has been bundled
@@ -17,6 +20,14 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: "GitHub Jobs",
 			template: "./src/template/index.html",
+			meta: {
+				viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
+			},
+		}),
+
+		new HtmlWebpackPlugin({
+			filename: "description.html",
+			template: "./src/template/description.html",
 			meta: {
 				viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
 			},

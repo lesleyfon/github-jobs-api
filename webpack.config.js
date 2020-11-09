@@ -3,8 +3,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
 
-const webpack = require("webpack");
-
 module.exports = {
 	mode: "development",
 	entry: "./src/index.js",
@@ -15,8 +13,6 @@ module.exports = {
 	// Helps makes it easier to track down errors when code has been bundled
 	devtool: "inline-source-map",
 	plugins: [
-		// new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
-		// new CleanWebpackPlugin(),
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 		new HtmlWebpackPlugin({
 			title: "GitHub Jobs",
@@ -25,7 +21,7 @@ module.exports = {
 				viewport: "width=device-width, initial-scale=1, shrink-to-fit=no",
 			},
 		}),
-		new HtmlWebpackTagsPlugin({ tags: ["sass/main.css"], append: true }),
+		new HtmlWebpackTagsPlugin({ append: true }),
 	],
 
 	module: {
@@ -33,24 +29,18 @@ module.exports = {
 			{
 				test: /\.(scss)$/,
 				use: [
+					"style-loader", // Inject style into DOM
+					"css-loader", // 2. turn css into commonJs
+					"sass-loader", //1. turns scss to css
+				],
+			},
+			{
+				test: /\.(png|jpe?g|gif|svg|eot|woff2|woff|ttf)$/i,
+				use: [
 					{
-						// Adds CSS to the DOM by injecting a `<style>` tag
-						loader: "style-loader",
-					},
-					{
-						// Interprets `@import` and `url()` like `import/require()` and will resolve them
-						loader: "css-loader",
-					},
-					{
-						loader: "resolve-url-loader",
-						// options: {...}
-					},
-					{
-						// Loads a SASS/SCSS file and compiles it to CSS
-						loader: "sass-loader",
+						loader: "file-loader",
 						options: {
-							// Include the path to Vanilla
-							includePaths: ["./node_modules"],
+							outputPath: "images",
 						},
 					},
 				],

@@ -1,7 +1,5 @@
 class SearchBar {
-	constructor() {
-		this.hello = "this.hello";
-	}
+	constructor() {}
 
 	searchInputField() {
 		return `
@@ -48,9 +46,7 @@ class SearchBar {
 	renderSearchBar() {
 		const section = document.createElement("section");
 		section.className = "search-bar-section";
-
 		section.innerHTML = this.createForm();
-		// section.appendChild(this.createForm());
 
 		return section;
 	}

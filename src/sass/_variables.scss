@@ -12,7 +12,6 @@ $gray: #9daec2;
 $dark-grey: #6e8098;
 
 // Fonts
-// $font-stack: ""
 
 // Typography
 
@@ -39,8 +38,8 @@ $layout-breakpoint-lg: 1110px;
 	font-style: normal;
 	font-weight: 400;
 	src: url("../../src/assets/fonts/abel/abel-v12-latin-regular.eot"); /* IE9 Compat Modes */
-	src: local("Abel Regular"), local("Abel-Regular"),
-		url("../../src/assets/fonts/abel/abel-v12-latin-regular.eot?#iefix")
+	src: local("Abel Regular"),
+		local("Abel-Regular") url("../../src/assets/fonts/abel/abel-v12-latin-regular.eot?#iefix")
 			format("embedded-opentype"),
 		/* IE6-IE8 */ url("../../src/assets/fonts/abel/abel-v12-latin-regular.woff2")
 			format("woff2"),

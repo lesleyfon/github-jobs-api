@@ -38,9 +38,16 @@ class JobList {
 			let logo = jobListing.company_logo;
 			listingInnerHTML += `
 			<div class='job-card'>
-                <div class='job-logo' style= '
-                background-image: url(${logo ? logo : this.imagePlaceHolder});
-                ' onclick='console.log("hello")'></div>
+				<div 
+				class='job-logo' 
+				style= '
+                	background-image: url(${logo ? logo : this.imagePlaceHolder});
+				' 
+				onclick='console.log("hello")'
+				type="button"
+				data-toggle="modal" 
+				data-target="#descriptionModal"
+				></div>
                 <p class='created-at'> 
                     <span> ${this.formatDate(jobListing.created_at)} ago</span> 
                     • 

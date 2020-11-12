@@ -2,9 +2,12 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlWebpackTagsPlugin = require("html-webpack-tags-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserMinimizer = require("terser-webpack-plugin");
 
 module.exports = {
-	mode: "development",
+	mode: "production",
 	entry: {
 		main: "./src/index.js",
 		description: "./src/description.js",
@@ -13,9 +16,16 @@ module.exports = {
 		filename: "[name].bundle.js",
 		path: path.resolve(__dirname, "dist"),
 	},
+	optimization: {
+		minimizer: [new OptimizeCssAssetsPlugin(), new TerserMinimizer()],
+	},
+
 	// Helps makes it easier to track down errors when code has been bundled
 	devtool: "inline-source-map",
 	plugins: [
+		new MiniCssExtractPlugin({
+			filename: "main.css",
+		}),
 		new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
 		new HtmlWebpackPlugin({
 			title: "GitHub Jobs",
@@ -40,7 +50,13 @@ module.exports = {
 			{
 				test: /\.(scss)$/,
 				use: [
-					"style-loader", // Inject style into DOM
+					// "style-loader", // Inject style into DOM
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: "",
+						},
+					},
 					"css-loader", // 2. turn css into commonJs
 					"sass-loader", //1. turns scss to css
 				],

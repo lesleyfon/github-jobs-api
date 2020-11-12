@@ -13,14 +13,29 @@ class JobDescription {
 					(jobDescData) => jobDescData.id === currentElementId
 				);
 				console.log(currentJobDescription);
-				$self.renderDescriptionHeader();
+				const { company, company_logo, company_url } = currentJobDescription;
+				$self.renderDescriptionHeader(company, company_url, company_logo);
 			});
 		});
 	}
 
-	renderDescriptionHeader() {
+	renderDescriptionHeader(companyName, companyUrl, companyLogo) {
 		const modalHeader = document.querySelector(".modal-header");
-		console.dir(modalHeader);
+
+		// Append the header to the description Modal
+		modalHeader.append(this.headerDescComponent(companyLogo));
+	}
+	//
+	headerDescComponent(companyLogo) {
+		const headerDiv = document.createElement("div");
+		// Header div  attrs
+		headerDiv.setAttribute("id", "job-desc-image-wrapper");
+
+		const headerLogo = document.createElement("img");
+		headerLogo.src = companyLogo;
+		// Append Image to the div
+		headerDiv.append(headerLogo);
+		return headerDiv;
 	}
 }
 

@@ -4,6 +4,7 @@ class JobDescription {
 	clickHandler() {
 		const jobCards = document.querySelectorAll(".job-card");
 
+		const $self = this;
 		let currentElementId = null;
 		jobCards.forEach((element) => {
 			element.addEventListener("click", function (event) {
@@ -12,8 +13,14 @@ class JobDescription {
 					(jobDescData) => jobDescData.id === currentElementId
 				);
 				console.log(currentJobDescription);
+				$self.renderDescriptionHeader();
 			});
 		});
+	}
+
+	renderDescriptionHeader() {
+		const modalHeader = document.querySelector(".modal-header");
+		console.dir(modalHeader);
 	}
 }
 

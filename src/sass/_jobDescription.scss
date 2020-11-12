@@ -4,4 +4,19 @@
 }
 .modal-content {
 	height: 90%;
+	background-color: transparent;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+	background-color: $white;
+}
+.modal-header {
+	height: 205px;
+	margin-bottom: 30px;
+}
+
+.modal-body {
+	margin-bottom: 30px;
 }

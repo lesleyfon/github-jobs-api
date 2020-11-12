@@ -21,22 +21,44 @@ class JobDescription {
 
 	renderDescriptionHeader(companyName, companyUrl, companyLogo) {
 		const modalHeader = document.querySelector(".modal-header");
-
+		modalHeader.innerHTML = "";
+		// De-structure this call and get node elements
+		const [companyNameElement, companySiteButton] = this.descriptionHeaderBody(
+			companyName,
+			companyUrl
+		);
 		// Append the header to the description Modal
-		modalHeader.append(this.descriptionLogo(companyLogo));
+		modalHeader.append(this.descriptionHeaderLogo(companyLogo));
+		modalHeader.append(companyNameElement);
+		modalHeader.append(companySiteButton);
 	}
-	//
-	descriptionLogo(companyLogo) {
+
+	// Job Description header Logo
+	descriptionHeaderLogo(companyLogo) {
 		const logoWrapper = document.createElement("div");
 		// Header div  attrs
 		logoWrapper.setAttribute("id", "job-desc-image-wrapper");
-
-		const imageElement = document.createElement("img");
-		imageElement.src = companyLogo;
-
-		// Append Image to the div
-		logoWrapper.append(imageElement);
+		logoWrapper.style.backgroundImage = `url("${companyLogo}")`;
 		return logoWrapper;
+	}
+
+	// Job description header body
+	descriptionHeaderBody(companyName, companyUrl) {
+		// H2 Text element
+		const companyNameElement = document.createElement("h2");
+		companyNameElement.setAttribute("id", "companyName");
+		companyNameElement.textContent = companyName;
+
+		//  Button element
+		const companySiteButton = document.createElement("button");
+		companySiteButton.setAttribute("id", "company-site");
+
+		const companySiteButtonAnchor = document.createElement("a");
+		companySiteButtonAnchor.href = companyUrl;
+		companySiteButton.appendChild(companySiteButtonAnchor);
+		companySiteButtonAnchor.textContent = "Company Site";
+
+		return [companyNameElement, companySiteButton];
 	}
 }
 

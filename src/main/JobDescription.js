@@ -23,19 +23,20 @@ class JobDescription {
 		const modalHeader = document.querySelector(".modal-header");
 
 		// Append the header to the description Modal
-		modalHeader.append(this.headerDescComponent(companyLogo));
+		modalHeader.append(this.descriptionLogo(companyLogo));
 	}
 	//
-	headerDescComponent(companyLogo) {
-		const headerDiv = document.createElement("div");
+	descriptionLogo(companyLogo) {
+		const logoWrapper = document.createElement("div");
 		// Header div  attrs
-		headerDiv.setAttribute("id", "job-desc-image-wrapper");
+		logoWrapper.setAttribute("id", "job-desc-image-wrapper");
 
-		const headerLogo = document.createElement("img");
-		headerLogo.src = companyLogo;
+		const imageElement = document.createElement("img");
+		imageElement.src = companyLogo;
+
 		// Append Image to the div
-		headerDiv.append(headerLogo);
-		return headerDiv;
+		logoWrapper.append(imageElement);
+		return logoWrapper;
 	}
 }
 

@@ -33,7 +33,6 @@ class JobList {
 	}
 	jobCard() {
 		let listingInnerHTML = "";
-
 		this.jobListings.forEach((jobListing) => {
 			let logo = jobListing.company_logo;
 			listingInnerHTML += `
@@ -42,11 +41,11 @@ class JobList {
 				class='job-logo' 
 				style= '
                 	background-image: url(${logo ? logo : this.imagePlaceHolder});
-				' 
-				onclick='console.log("hello")'
+				'
 				type="button"
 				data-toggle="modal" 
 				data-target="#descriptionModal"
+				data-id ="${jobListing.id}"
 				></div>
                 <p class='created-at'> 
                     <span> ${this.formatDate(jobListing.created_at)} ago</span> 
@@ -63,6 +62,7 @@ class JobList {
 
 		return listingInnerHTML;
 	}
+
 	render() {
 		const jobListSection = document.createElement("section");
 		jobListSection.classList = "container";
@@ -70,7 +70,7 @@ class JobList {
             <section class='job-list-card-wrapper'>
                 ${this.jobCard()}
             </section>
-        `;
+		`;
 		return jobListSection;
 	}
 }

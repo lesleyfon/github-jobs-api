@@ -1,3 +1,5 @@
+import { formatDate } from "../utils/formatDate";
+
 class JobDescriptionBody {
 	topTextSection() {
 		const createdAt = document.createElement("span");
@@ -48,14 +50,22 @@ class JobDescriptionBody {
 	 * @param {*} location location
 	 * @param {*} title title
 	 */
-	render(created_at = null, job_type = null, location = null, title = null) {
-		this.created_at = created_at;
+	render(
+		created_at = null,
+		job_type = null,
+		location = null,
+		title = null,
+		descriptionInnerHTML = ""
+	) {
+		this.created_at = formatDate(created_at);
 		this.job_type = job_type;
 		this.location = location;
 		this.title = title;
 
 		const modal = document.querySelector(".modal-body");
+		modal.textContent = "";
 		modal.append(this.bodyHeader());
+		modal.innerHTML += descriptionInnerHTML;
 	}
 }
 

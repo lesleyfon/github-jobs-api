@@ -1,6 +1,10 @@
 import { data } from "./data";
+import JobDescriptionBody from "./JobDescriptionBody";
 
 class JobDescription {
+	constructor() {
+		this.modalBodyClass = new JobDescriptionBody();
+	}
 	clickHandler() {
 		const jobCards = document.querySelectorAll(".job-card");
 
@@ -13,8 +17,17 @@ class JobDescription {
 					(jobDescData) => jobDescData.id === currentElementId
 				);
 				console.log(currentJobDescription);
-				const { company, company_logo, company_url } = currentJobDescription;
+				const {
+					company,
+					company_logo,
+					company_url,
+					created_at,
+					type,
+					location,
+					title,
+				} = currentJobDescription;
 				$self.renderDescriptionHeader(company, company_url, company_logo);
+				$self.modalBodyClass.render(created_at, type, location, title);
 			});
 		});
 	}

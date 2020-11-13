@@ -49,6 +49,7 @@ class JobDescription {
 		companyNameElement.setAttribute("id", "companyName");
 		companyNameElement.textContent = companyName;
 
+		// Locations
 		//  Button element
 		const companySiteButton = document.createElement("button");
 		companySiteButton.setAttribute("id", "company-site");

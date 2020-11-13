@@ -51,11 +51,22 @@
 	border-radius: 5px;
 }
 
+#companyName {
+	font-family: Abel;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 1.4rem;
+	text-align: center;
+	word-break: break-all;
+	line-break: normal;
+	color: #19202d;
+	text-transform: capitalize;
+}
 #company-site a {
 	font-family: Abel;
 	font-style: normal;
-	font-weight: normal;
-	font-size: 1rem;
+	font-weight: lighter;
+	font-size: 1.1rem;
 	word-break: initial;
 	text-align: center;
 	color: $violet;

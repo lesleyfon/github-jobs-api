@@ -26,9 +26,11 @@ class JobDescription {
 					location,
 					title,
 					description,
+					url,
 				} = currentJobDescription;
+
 				$self.renderDescriptionHeader(company, company_url, company_logo);
-				$self.modalBodyClass.render(created_at, type, location, title, description);
+				$self.modalBodyClass.render(created_at, type, location, title, description, url);
 			});
 		});
 	}

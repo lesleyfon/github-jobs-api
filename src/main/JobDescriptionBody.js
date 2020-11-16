@@ -57,17 +57,34 @@ class JobDescriptionBody {
 		job_type = null,
 		location = null,
 		title = null,
-		descriptionInnerHTML = ""
+		descriptionInnerHTML = "",
+		url
 	) {
 		this.created_at = formatDate(created_at);
 		this.job_type = job_type;
 		this.location = location;
 		this.title = title;
 
+		// Apply now button
+		const applyNow = document.createElement("button");
+		applyNow.innerHTML = `<a href='${url}'> Apply Now</a>`;
+		applyNow.setAttribute("id", "apply-now");
+
+		// Append text and header to the modal body
 		const modal = document.querySelector(".modal-body");
 		modal.textContent = "";
 		modal.append(this.bodyHeader());
-		modal.innerHTML += descriptionInnerHTML;
+		modal.append(applyNow);
+
+		// Wrapp all the inner html from the call in a section
+		const description = document.createElement("section");
+		description.setAttribute("id", "desc-body-html");
+
+		description.innerHTML = descriptionInnerHTML;
+
+		console.log(description);
+		// Append description to the modal body
+		modal.appendChild(description);
 	}
 }
 

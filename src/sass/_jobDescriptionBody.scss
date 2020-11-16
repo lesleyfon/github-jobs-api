@@ -33,3 +33,63 @@
 	/* identical to box height */
 	color: #5964e0;
 }
+
+#apply-now {
+	outline: none;
+	border: none;
+
+	background: #5964e0;
+	border-radius: 5px;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 20px;
+}
+#apply-now a {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	font-family: Abel;
+	font-weight: lighter;
+	font-size: 1.2rem;
+	line-height: 20px;
+	text-align: center;
+	color: #ffffff;
+}
+
+#desc-body-html {
+	padding: 20px 0px;
+}
+
+#desc-body-html > * {
+	line-height: 1.5;
+	font-family: Abel;
+	font-style: normal;
+	font-weight: lighter;
+
+	color: #6e8098;
+}
+
+#desc-body-html p,
+#desc-body-html ul {
+	margin-bottom: 20px;
+}
+
+#desc-body-html p strong {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin: 40px 0px;
+	color: #19202d;
+	line-height: 1.2;
+}
+
+#desc-body-html ul li {
+	line-height: 1.5;
+	list-style-type: circle;
+	margin-left: 30px;
+}
+#desc-body-html ul li::marker {
+	padding: 0;
+	margin: 0px;
+}

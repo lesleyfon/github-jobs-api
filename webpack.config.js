@@ -7,7 +7,7 @@ var OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserMinimizer = require("terser-webpack-plugin");
 
 module.exports = {
-	mode: "production",
+	mode: "development",
 	entry: {
 		main: "./src/index.js",
 		description: "./src/description.js",
@@ -16,9 +16,11 @@ module.exports = {
 		filename: "[name].bundle.js",
 		path: path.resolve(__dirname, "dist"),
 	},
-	optimization: {
-		minimizer: [new OptimizeCssAssetsPlugin(), new TerserMinimizer()],
-	},
+	// optimization: {
+	// 	minimizer: [
+	// 		new OptimizeCssAssetsPlugin(),
+	// 		new TerserMinimizer()],
+	// }, // This is for optimization
 
 	// Helps makes it easier to track down errors when code has been bundled
 	devtool: "inline-source-map",
@@ -50,13 +52,13 @@ module.exports = {
 			{
 				test: /\.(scss)$/,
 				use: [
-					// "style-loader", // Inject style into DOM
-					{
-						loader: MiniCssExtractPlugin.loader,
-						options: {
-							publicPath: "",
-						},
-					},
+					"style-loader", // Inject style into DOM
+					// {
+					// 	loader: MiniCssExtractPlugin.loader,
+					// 	options: {
+					// 		publicPath: "",
+					// 	},
+					// }, // Estracts sscss files to css file
 					"css-loader", // 2. turn css into commonJs
 					"sass-loader", //1. turns scss to css
 				],

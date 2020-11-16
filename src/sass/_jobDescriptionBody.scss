@@ -1,2 +1,35 @@
 .modal-body {
 }
+
+#modal-desc-body-header {
+	height: 100px;
+	margin: 20px 0px;
+}
+#top-text {
+	height: 20px;
+	font-family: Abel;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 1rem;
+	color: #6e8098;
+}
+
+#top-text span {
+	margin-right: 15px;
+}
+
+#job-title {
+	font-family: Abel;
+	font-weight: lighter;
+	font-size: 1.4rem;
+	color: #19202d;
+	margin: 8px 0px;
+}
+
+#job-location {
+	font-family: Abel;
+	font-size: 0.875rem;
+	line-height: 18px;
+	/* identical to box height */
+	color: #5964e0;
+}

@@ -15,6 +15,7 @@ class JobDescriptionBody {
 		period.textContent = "•";
 
 		const topText = document.createElement("p");
+		topText.setAttribute("id", "top-text");
 
 		topText.append(createdAt);
 		topText.append(period);
@@ -36,6 +37,7 @@ class JobDescriptionBody {
 	}
 	bodyHeader() {
 		const bodyHeaderWRapper = document.createElement("section");
+		bodyHeaderWRapper.setAttribute("id", "modal-desc-body-header");
 		bodyHeaderWRapper.appendChild(this.topTextSection());
 		bodyHeaderWRapper.appendChild(this.bottomSection()[0]);
 		bodyHeaderWRapper.appendChild(this.bottomSection()[1]);

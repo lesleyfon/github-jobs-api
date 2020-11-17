@@ -52,13 +52,13 @@ module.exports = {
 			{
 				test: /\.(scss)$/,
 				use: [
-					"style-loader", // Inject style into DOM
-					// {
-					// 	loader: MiniCssExtractPlugin.loader,
-					// 	options: {
-					// 		publicPath: "",
-					// 	},
-					// }, // Estracts sscss files to css file
+					// "style-loader", // Inject style into DOM
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: {
+							publicPath: "",
+						},
+					}, // Estracts sscss files to css file
 					"css-loader", // 2. turn css into commonJs
 					"sass-loader", //1. turns scss to css
 				],

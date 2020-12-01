@@ -67,6 +67,8 @@ class JobDescriptionBody {
 
 		// Apply now button
 		const applyNow = document.createElement("button");
+		const modalFooter = document.getElementById("modal-footer");
+
 		applyNow.innerHTML = `<a href='${url}'> Apply Now</a>`;
 		applyNow.setAttribute("id", "apply-now");
 
@@ -75,6 +77,7 @@ class JobDescriptionBody {
 		modal.textContent = "";
 		modal.append(this.bodyHeader());
 		modal.append(applyNow);
+		modalFooter.prepend(applyNow);
 
 		// Wrapp all the inner html from the call in a section
 		const description = document.createElement("section");

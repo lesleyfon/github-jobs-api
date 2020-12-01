@@ -77,10 +77,17 @@ class JobDescriptionBody {
 		modal.textContent = "";
 		modal.append(this.bodyHeader());
 		modal.append(applyNow);
+
+		// Delete Any exist applynow Button before appending a new Buttons
+		const button = document.querySelector("#modal-footer #apply-now");
+		!!button && modalFooter.removeChild(button); // Coerces the button to a boolean. If it returns null do nothing else remove the node from the modal footer
+
+		// APPEND THE APPLY NOW BUTTON TO THE FOOTER MODAL
 		modalFooter.prepend(applyNow);
 
-		// Wrapp all the inner html from the call in a section
+		// Wrap all the inner html from the call in a section
 		const description = document.createElement("section");
+
 		description.setAttribute("id", "desc-body-html");
 
 		description.innerHTML = descriptionInnerHTML;

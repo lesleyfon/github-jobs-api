@@ -6,17 +6,19 @@ class JobDescription {
 		this.modalBodyClass = new JobDescriptionBody();
 	}
 	clickHandler() {
-		const jobCards = document.querySelectorAll(".job-card");
+		const jobCards = document.querySelectorAll(".job-logo");
 
 		const $self = this;
 		let currentElementId = null;
+
+		// Handle Click event for Logos
 		jobCards.forEach((element) => {
 			element.addEventListener("click", function (event) {
+				// Only display modal if user clicks on the logo
 				currentElementId = event.target.dataset["id"];
 				let currentJobDescription = data.find(
 					(jobDescData) => jobDescData.id === currentElementId
 				);
-				console.log(currentJobDescription);
 				const {
 					company,
 					company_logo,

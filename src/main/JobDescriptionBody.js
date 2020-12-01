@@ -82,7 +82,6 @@ class JobDescriptionBody {
 
 		description.innerHTML = descriptionInnerHTML;
 
-		console.log(description);
 		// Append description to the modal body
 		modal.appendChild(description);
 	}

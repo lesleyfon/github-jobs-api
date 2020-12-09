@@ -13,8 +13,25 @@ class Main {
 	}
 	renderMain() {
 		const mainBody = document.getElementById("wrapper");
+
+		// Cleans the body of the page before any render
+		mainBody.innerHTML = "";
+
+		// Renders the search bar
 		mainBody.appendChild(this.searchBar.renderSearchBar());
+
+		// Renders a list of job cards
 		mainBody.appendChild(this.jobList.render());
+		let $self = this;
+
+		// This Logic to handle pagination by increasing the tabindex to load 10 more cards
+		const loadMoreButton = document.getElementById("load-more");
+		loadMoreButton.addEventListener("click", () => {
+			$self.jobList.tabIndex += 10;
+			$self.renderMain();
+		});
+
+		// Handles Displaying modal for a specific job listing
 		this.jobDescription.clickHandler();
 	}
 }

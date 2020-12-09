@@ -3,7 +3,9 @@
  */
 class JobList {
 	constructor(data) {
+		this.tabIndex = 10;
 		this.jobListings = [...data];
+
 		this.imagePlaceHolder =
 			"https://images.unsplash.com/photo-1515622472995-1a06094d2224?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80";
 	}
@@ -34,7 +36,10 @@ class JobList {
 	}
 	jobCard() {
 		let listingInnerHTML = "";
-		this.jobListings.forEach((jobListing) => {
+
+		const array = this.jobListings.slice(0, this.tabIndex);
+
+		array.forEach((jobListing) => {
 			let logo = jobListing.company_logo;
 			listingInnerHTML += `
 			<div class='job-card'>
@@ -67,16 +72,12 @@ class JobList {
 	}
 
 	loadMoreButton() {
-		let self = this;
 		const loadButton = document.createElement("button");
 		const loadButtonSection = document.createElement("section");
 		loadButtonSection.classList = "load-button-section";
 		loadButton.setAttribute("id", "load-more");
 		loadButton.textContent = "Load More";
 		loadButtonSection.appendChild(loadButton);
-		loadButton.addEventListener("click", () => {
-			console.log("Hello");
-		});
 
 		return loadButtonSection;
 	}
@@ -87,8 +88,7 @@ class JobList {
 		jobListSection.innerHTML = `
             <section class='job-list-card-wrapper'>
                 ${this.jobCard()}
-            </section>
-		`;
+            </section>`;
 		jobListSection.append(this.loadMoreButton());
 		return jobListSection;
 	}

@@ -1,12 +1,16 @@
 const { default: JobDescription } = require("./JobDescription.js");
 const { default: JobList } = require("./JobList.js");
+const { data: d } = require(`./../main/data.js`);
 const SearchBar = require("./SearchBar.js");
 
 class Main {
-	constructor() {
+	constructor(data = d) {
+		// Search Bar Component
 		this.searchBar = new SearchBar();
-		this.jobList = new JobList();
-		this.jobDescription = new JobDescription();
+
+		// List Of job  cards
+		this.jobList = new JobList(data);
+		this.jobDescription = new JobDescription(data);
 	}
 	renderMain() {
 		const mainBody = document.getElementById("wrapper");

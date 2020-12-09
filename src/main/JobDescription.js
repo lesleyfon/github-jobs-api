@@ -1,9 +1,9 @@
-import { data } from "./data";
 import JobDescriptionBody from "./JobDescriptionBody";
-
+import { data as d } from "./data.js";
 class JobDescription {
-	constructor() {
+	constructor(data = d) {
 		this.modalBodyClass = new JobDescriptionBody();
+		this.jobData = data;
 	}
 	clickHandler() {
 		const jobCards = document.querySelectorAll(".job-logo");
@@ -16,7 +16,7 @@ class JobDescription {
 			element.addEventListener("click", function (event) {
 				// Only display modal if user clicks on the logo
 				currentElementId = event.target.dataset["id"];
-				let currentJobDescription = data.find(
+				let currentJobDescription = $self.jobData.find(
 					(jobDescData) => jobDescData.id === currentElementId
 				);
 				const {

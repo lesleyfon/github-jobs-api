@@ -1,7 +1,7 @@
 const { data } = require("./../main/data.js");
 
 class JobList {
-	constructor() {
+	constructor(data = []) {
 		this.jobListings = [...data];
 		this.imagePlaceHolder =
 			"https://images.unsplash.com/photo-1515622472995-1a06094d2224?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80";

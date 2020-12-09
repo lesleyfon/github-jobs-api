@@ -48,7 +48,8 @@ class JobList {
 				data-id ="${jobListing.id}"
 				></div>
                 <p class='created-at'> 
-                    <span> ${this.formatDate(jobListing.created_at)} ago</span> 
+					<span> ${this.formatDate(jobListing.created_at)} 
+					${this.formatDate(jobListing.created_at).includes("today") ? "" : "ago"}</span> 
                     • 
                     <span class='job-type'>${jobListing.type}</span>    
                 </p>

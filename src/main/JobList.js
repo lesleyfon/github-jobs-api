@@ -69,13 +69,16 @@ class JobList {
 	loadMoreButton() {
 		let self = this;
 		const loadButton = document.createElement("button");
+		const loadButtonSection = document.createElement("section");
+		loadButtonSection.classList = "load-button-section";
 		loadButton.setAttribute("id", "load-more");
 		loadButton.textContent = "Load More";
+		loadButtonSection.appendChild(loadButton);
 		loadButton.addEventListener("click", () => {
 			console.log("Hello");
 		});
 
-		return loadButton;
+		return loadButtonSection;
 	}
 
 	render() {
@@ -86,6 +89,7 @@ class JobList {
                 ${this.jobCard()}
             </section>
 		`;
+		jobListSection.append(this.loadMoreButton());
 		return jobListSection;
 	}
 }

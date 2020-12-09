@@ -1,19 +1,20 @@
 import JobDescriptionBody from "./JobDescriptionBody";
-import { data as d } from "./data.js";
 
 class JobDescription {
-	constructor(data = d) {
+	constructor(data) {
 		this.modalBodyClass = new JobDescriptionBody();
 		this.jobData = data;
 	}
+
+	// For handling the click to display modal
 	clickHandler() {
-		const jobCards = document.querySelectorAll(".job-logo");
+		const jobDescriptionLogo = document.querySelectorAll(".job-logo");
 
 		const $self = this;
 		let currentElementId = null;
 
 		// Handle Click event for Logos
-		jobCards.forEach((element) => {
+		jobDescriptionLogo.forEach((element) => {
 			element.addEventListener("click", function (event) {
 				// Only display modal if user clicks on the logo
 				currentElementId = event.target.dataset["id"];
@@ -41,6 +42,7 @@ class JobDescription {
 	renderDescriptionHeader(companyName, companyUrl, companyLogo) {
 		const modalHeader = document.querySelector(".modal-header");
 		modalHeader.innerHTML = "";
+
 		// De-structure this call and get node elements
 		const [companyNameElement, companySiteButton] = this.descriptionHeaderBody(
 			companyName,

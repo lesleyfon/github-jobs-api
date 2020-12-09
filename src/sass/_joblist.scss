@@ -107,3 +107,23 @@
 		border: none;
 	}
 }
+
+.load-button-section {
+	width: 100%;
+	max-height: fit-content;
+}
+
+#load-more {
+	width: 8rem;
+	height: 3rem;
+	border: none;
+	background-color: rgba(89, 100, 224, 0.8);
+	color: #f4f6f8;
+	font-family: Abel;
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 0.95rem;
+	border-radius: 5px;
+	display: block;
+	margin: 0 auto;
+}

@@ -1,7 +1,8 @@
-const { data } = require("./../main/data.js");
-
+/**
+ * Renders a list of all the job cards
+ */
 class JobList {
-	constructor(data = []) {
+	constructor(data) {
 		this.jobListings = [...data];
 		this.imagePlaceHolder =
 			"https://images.unsplash.com/photo-1515622472995-1a06094d2224?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80";
@@ -48,7 +49,8 @@ class JobList {
 				data-id ="${jobListing.id}"
 				></div>
                 <p class='created-at'> 
-					<span> ${this.formatDate(jobListing.created_at)} 
+					<span> 
+					${this.formatDate(jobListing.created_at)} 
 					${this.formatDate(jobListing.created_at).includes("today") ? "" : "ago"}</span> 
                     • 
                     <span class='job-type'>${jobListing.type}</span>    
@@ -62,6 +64,18 @@ class JobList {
 		});
 
 		return listingInnerHTML;
+	}
+
+	loadMoreButton() {
+		let self = this;
+		const loadButton = document.createElement("button");
+		loadButton.setAttribute("id", "load-more");
+		loadButton.textContent = "Load More";
+		loadButton.addEventListener("click", () => {
+			console.log("Hello");
+		});
+
+		return loadButton;
 	}
 
 	render() {

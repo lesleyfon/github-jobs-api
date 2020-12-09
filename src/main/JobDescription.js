@@ -1,5 +1,6 @@
 import JobDescriptionBody from "./JobDescriptionBody";
 import { data as d } from "./data.js";
+
 class JobDescription {
 	constructor(data = d) {
 		this.modalBodyClass = new JobDescriptionBody();

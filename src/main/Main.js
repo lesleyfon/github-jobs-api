@@ -1,10 +1,9 @@
 const { default: JobDescription } = require("./JobDescription.js");
 const { default: JobList } = require("./JobList.js");
-const { data: d } = require(`./../main/data.js`);
 const SearchBar = require("./SearchBar.js");
 
 class Main {
-	constructor(data = d) {
+	constructor(data) {
 		// Search Bar Component
 		this.searchBar = new SearchBar();
 

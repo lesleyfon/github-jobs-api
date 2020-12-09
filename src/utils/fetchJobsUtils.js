@@ -1,3 +1,5 @@
+import { data } from "../main/data";
+
 // Fetch Data utils
 export const fetchJobsData = async () => {
 	try {
@@ -9,6 +11,7 @@ export const fetchJobsData = async () => {
 		return result;
 	} catch (error) {
 		// throw new Error(error);
-		return [];
+		// Fix this and return an error
+		return data;
 	}
 };

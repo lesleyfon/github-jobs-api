@@ -6,7 +6,7 @@ class Main {
 	constructor(data) {
 		// Search Bar Component
 		this.searchBar = new SearchBar();
-
+		this.lengthOfData = data.length;
 		// List Of job  cards
 		this.jobList = new JobList(data);
 		this.jobDescription = new JobDescription(data);
@@ -26,8 +26,18 @@ class Main {
 
 		// This Logic to handle pagination by increasing the tabindex to load 10 more cards
 		const loadMoreButton = document.getElementById("load-more");
+		const loadLessButton = document.getElementById("load-less");
+
+		// Load More
 		loadMoreButton.addEventListener("click", () => {
 			$self.jobList.tabIndex += 10;
+			$self.renderMain();
+		});
+		// Load less
+		loadLessButton.addEventListener("click", () => {
+			if ($self.jobList.tabIndex <= 10) return;
+
+			$self.jobList.tabIndex -= 10;
 			$self.renderMain();
 		});
 

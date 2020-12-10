@@ -111,9 +111,14 @@
 .load-button-section {
 	width: 100%;
 	max-height: fit-content;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
 }
 
-#load-more {
+#load-more,
+#load-less {
 	width: 8rem;
 	height: 3rem;
 	border: none;
@@ -125,5 +130,4 @@
 	font-size: 0.95rem;
 	border-radius: 5px;
 	display: block;
-	margin: 0 auto;
 }

@@ -34,6 +34,8 @@ class JobList {
 		}
 		return dateString;
 	}
+
+	//
 	jobCard() {
 		let listingInnerHTML = "";
 
@@ -72,12 +74,20 @@ class JobList {
 	}
 
 	loadMoreButton() {
-		const loadButton = document.createElement("button");
 		const loadButtonSection = document.createElement("section");
 		loadButtonSection.classList = "load-button-section";
+
+		const loadButton = document.createElement("button");
+
+		const less = document.createElement("button");
+		less.setAttribute("id", "load-less");
+
 		loadButton.setAttribute("id", "load-more");
 		loadButton.textContent = "Load More";
+		less.textContent = "Load Less";
+
 		loadButtonSection.appendChild(loadButton);
+		loadButtonSection.appendChild(less);
 
 		return loadButtonSection;
 	}

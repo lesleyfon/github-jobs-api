@@ -1,6 +1,7 @@
 import { data } from "../main/data";
 
 // Fetch Data utils
+
 export const fetchJobsData = async () => {
 	try {
 		let result = await fetch(

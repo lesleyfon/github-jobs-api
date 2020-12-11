@@ -9,7 +9,7 @@
     "watch-css": "npm run build-css && node-sass --watch src --output dist",
     "dev": "webpack --watch",
     "prod": "webpack -p",
-    "build": "webpack -p",
+    "build": "webpack",
     "start": "webpack-dev-server --open"
   },
   "keywords": [],

@@ -7,7 +7,7 @@ var OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserMinimizer = require("terser-webpack-plugin");
 
 module.exports = {
-	mode: "development",
+	mode: "production",
 	entry: {
 		main: "./src/index.js",
 		description: "./src/description.js",
@@ -16,11 +16,9 @@ module.exports = {
 		filename: "[name].bundle.js",
 		path: path.resolve(__dirname, "dist"),
 	},
-	// optimization: {
-	// 	minimizer: [
-	// 		new OptimizeCssAssetsPlugin(),
-	// 		new TerserMinimizer()],
-	// }, // This is for optimization
+	optimization: {
+		minimizer: [new OptimizeCssAssetsPlugin(), new TerserMinimizer()],
+	}, // This is for optimization
 
 	// Helps makes it easier to track down errors when code has been bundled
 	devtool: "inline-source-map",

@@ -1,53 +1,98 @@
 class SearchBar {
 	constructor() {}
 
+	/**
+	 *
+	 * @param {string} elementName Name of HTML tag
+	 * @returns {HTMLElement} returns a html element
+	 */
+	createElement(elementName) {
+		const elem = document.createElement(elementName);
+		return elem;
+	}
 	searchInputField() {
-		return `
-		<label id="search-input-field-label">
-			<span id="search-input-field-svg"></span>
-			<input id="search-text-field" type="text" placeholder="Filter by title...">
-		</label>
-	`;
+		const searchLabel = this.createElement("label");
+		searchLabel.setAttribute("id", "search-input-field-label");
+
+		// Span
+		const span = this.createElement("span");
+		span.setAttribute("id", "search-input-field-svg");
+
+		// Input element
+		const input = this.createElement("input");
+		input.placeholder = "Filter by title...";
+		input.disabled = true;
+		input.type = "text";
+
+		// appending child elements
+		searchLabel.append(span);
+		searchLabel.append(input);
+
+		return searchLabel;
 	}
 	filter() {
-		return `
-			<label id = "filter-location-field-label">
-				<span id="filter-location-svg-span"></span>
-				<input id="filter-input-field" type="text" placeholder="Filter by location...">
-			</label>
-	`;
+		const filterLabel = this.createElement("label");
+		filterLabel.setAttribute("id", "filter-location-field-label");
+
+		// Span
+		const span = this.createElement("span");
+		span.setAttribute("id", "filter-location-svg-span");
+
+		// Input element
+		const input = this.createElement("input");
+		input.setAttribute("id", "filter-input-field");
+		input.placeholder = "Filter by location...";
+		input.disabled = true;
+		input.type = "text";
+
+		// appending child elements
+		filterLabel.append(span);
+		filterLabel.append(input);
+
+		return filterLabel;
 	}
 
 	submitButton() {
-		const submitButton = `
-			<label id ="submit-button-label">
-				<span id="submit-svg"></span>
-				<input id="submit-field" type="submit" placeholder="Search">
-			</label>
-		`;
-		return submitButton;
+		const btnLabel = this.createElement("label");
+		btnLabel.setAttribute("id", "submit-button-label");
+
+		const span = this.createElement("span");
+		span.setAttribute("id", "submit-svg");
+
+		const input = this.createElement("input");
+		input.setAttribute("id", "submit-field");
+		input.placeholder = "Search";
+
+		input.disabled = true;
+		input.type = "submit";
+
+		btnLabel.append(span);
+		btnLabel.append(input);
+
+		return btnLabel;
 	}
+
 	createForm() {
 		const form = document.createElement("form");
 
 		form.setAttribute("id", "form_id");
 
-		form.addEventListener("submit", (event) => {
-			event.preventDefault();
-			console.log("hello");
-		});
-		return `<form>
-			${this.searchInputField()}
-			${this.filter()}
-			${this.submitButton()}
-		</form>`;
+		// appending child elements to form field
+		form.appendChild(this.searchInputField());
+		form.appendChild(this.filter());
+		form.appendChild(this.submitButton());
+		return form;
 	}
 
+	/**
+	 * @returns {HTMLElement} returns section
+	 */
 	renderSearchBar() {
-		const section = document.createElement("section");
+		const section = this.createElement("section");
 		section.className = "search-bar-section";
-		section.innerHTML = this.createForm();
 
+		// Form
+		section.append(this.createForm());
 		return section;
 	}
 }

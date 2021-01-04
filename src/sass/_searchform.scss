@@ -44,17 +44,18 @@
 }
 
 // First form label styles
-
 .search-bar-section form #search-input-field-label {
 	width: 60%;
 	height: 100%;
 	padding-left: 15px;
 	padding-top: 0;
 	padding-bottom: 0;
+
 	input {
 		height: 100%;
 		width: 100%;
 		border: none;
+		cursor: not-allowed;
 	}
 	@media (min-width: $layout-breakpoint-md) {
 		display: flex;
@@ -118,6 +119,7 @@
 			display: block;
 			width: 80%;
 			height: 100%;
+			cursor: not-allowed;
 		}
 		#filter-location-svg-span {
 			padding: 10px;

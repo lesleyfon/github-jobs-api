@@ -8,7 +8,7 @@ import { fetchJobsData } from "./utils/fetchJobsUtils";
 (async function () {
 	// HEader Component
 	const header = new Header();
-	header.buildHeader();
+	header.render();
 
 	// Query loader to set display loader when data fetching is still on pending state
 	const loaderSpinnerContainer = document.querySelector(".loader-container");

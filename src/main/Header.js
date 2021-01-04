@@ -1,19 +1,18 @@
 class Header {
-	constructor() {}
-
-	addLogo() {
-		return `<div id="id_logo"></div>`;
+	/**
+	 *
+	 * @param {string} elementName HTML element tag name
+	 *  @returns { HTMLElement } HTML ELEMENT
+	 */
+	createElement(elementName) {
+		const elem = document.createElement(elementName);
+		return elem;
 	}
-	buildHeader() {
-		const header = document.getElementById("id_header");
-
-		const logoThemeContainer = `
-		<div id="logo-theme-container">
-			${this.addLogo()}
-			${this.themeContainer()}
-		</div>`;
-
-		header.innerHTML = logoThemeContainer;
+	addLogo() {
+		const logoContainer = this.createElement("div");
+		logoContainer.setAttribute("id", "id_logo");
+		// `<div id="id_logo"></div>`;
+		return logoContainer;
 	}
 
 	themeContainer() {
@@ -28,6 +27,16 @@ class Header {
 			</div>`;
 
 		return themeContainer;
+	}
+	render() {
+		const header = document.getElementById("id_header");
+
+		const headerWrapper = this.createElement("div");
+		headerWrapper.setAttribute("id", "logo-theme-container");
+		headerWrapper.appendChild(this.addLogo());
+		headerWrapper.innerHTML += this.themeContainer();
+		header.appendChild(headerWrapper);
+		return header;
 	}
 }
 module.exports = Header;

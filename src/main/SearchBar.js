@@ -10,6 +10,10 @@ class SearchBar {
 		const elem = document.createElement(elementName);
 		return elem;
 	}
+
+	/**
+	 * @returns {HTMLLabelElement} returns a html label element with input field amd span for icons
+	 */
 	searchInputField() {
 		const searchLabel = this.createElement("label");
 		searchLabel.setAttribute("id", "search-input-field-label");
@@ -30,6 +34,10 @@ class SearchBar {
 
 		return searchLabel;
 	}
+
+	/**
+	 * @returns {HTMLLabelElement} returns a html label element with input field amd span for icons
+	 */
 	filter() {
 		const filterLabel = this.createElement("label");
 		filterLabel.setAttribute("id", "filter-location-field-label");
@@ -52,6 +60,9 @@ class SearchBar {
 		return filterLabel;
 	}
 
+	/**
+	 * @returns {HTMLButtonElement} returns a html button element with input field and span for icons
+	 */
 	submitButton() {
 		const btnLabel = this.createElement("label");
 		btnLabel.setAttribute("id", "submit-button-label");
@@ -72,6 +83,9 @@ class SearchBar {
 		return btnLabel;
 	}
 
+	/**
+	 * @returns {HTMLFormElement} returns a html form element with input fields and submit button
+	 */
 	createForm() {
 		const form = document.createElement("form");
 
